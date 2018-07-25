@@ -1,10 +1,13 @@
 import os
 import subprocess
 
-import glib
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
 
-from sugar.activity.activity import Activity
+from gi.repository import GLib
+from gi.repository import Gtk
+
+from sugar3.activity.activity import Activity
 
 
 class TuxPaintLauncher(Activity):
@@ -15,7 +18,7 @@ class TuxPaintLauncher(Activity):
 
         self.max_participants = 1
 
-        hbox = gtk.HBox()
+        hbox = Gtk.HBox()
         self.set_canvas(hbox)
         self.show_all()
         options = ['tuxpaint', '--nolockfile', '--fullscreen=native', '--noprint']
@@ -26,9 +29,9 @@ class TuxPaintLauncher(Activity):
 
         # Stay alive with a blank window mapped for at least 60 seconds
         # so that the shell knows that we launched
-        glib.timeout_add_seconds(60, gtk.main_quit)
+        GLib.timeout_add_seconds(60, Gtk.main_quit)
         # but get rid of that window if the child exits beforehand
-        glib.child_watch_add(proc.pid, gtk.main_quit)
+        GLib.child_watch_add(proc.pid, Gtk.main_quit)
 
     def get_documents_path(self):
         """Gets the path of the DOCUMENTS folder
