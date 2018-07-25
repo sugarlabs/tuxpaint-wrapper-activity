@@ -1,5 +1,7 @@
-import os
 import subprocess
+import os
+import errno
+import logging
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -21,7 +23,8 @@ class TuxPaintLauncher(Activity):
         hbox = Gtk.HBox()
         self.set_canvas(hbox)
         self.show_all()
-        options = ['tuxpaint', '--nolockfile', '--fullscreen=native', '--noprint']
+        options = [
+            'tuxpaint', '--nolockfile', '--fullscreen=native', '--noprint']
         doc_path = self.get_documents_path()
         if doc_path is not None:
             options.extend(('--savedir', doc_path))
@@ -55,4 +58,3 @@ class TuxPaintLauncher(Activity):
             if exception.errno != errno.ENOENT:
                 logging.exception('Could not run xdg-user-dir')
         return None
-
