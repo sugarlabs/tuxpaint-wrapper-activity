@@ -18,7 +18,7 @@ class TuxPaintLauncher(Activity):
         hbox = gtk.HBox()
         self.set_canvas(hbox)
         self.show_all()
-        options = ['tuxpaint', '--nolockfile', '--native', '--fullscreen', '--noprint']
+        options = ['tuxpaint', '--nolockfile', '--fullscreen=native', '--noprint']
         doc_path = self.get_documents_path()
         if doc_path is not None:
             options.extend(('--savedir', doc_path))
