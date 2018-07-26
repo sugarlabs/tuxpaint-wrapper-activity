@@ -1,7 +1,7 @@
 v7 James Cameron
 
 * Port to GTK+ 3,
-* Fix --fullscreen for new GCompris,
+* Fix --fullscreen for new Tux Paint,
 * Flake8 fixes.
 
 v6.2 Nathan Riddle
