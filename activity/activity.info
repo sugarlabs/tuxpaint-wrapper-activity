@@ -10,6 +10,5 @@ url = http://www.tuxpaint.org/
 category = Education; Art
 icon = activity-icon
 exec = sugar-activity activity.TuxPaintLauncher
-mime_types = image/bmp;image/gif;image/jpeg;image/png;image/tiff
 activity_version = 7
 bundle_id = org.tuxpaint
