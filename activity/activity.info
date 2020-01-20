@@ -6,6 +6,6 @@ license = GPLv2+
 url = http://www.tuxpaint.org/
 tags = Art
 icon = activity-icon
-exec = sugar-activity activity.TuxPaintLauncher
+exec = sugar-activity3 activity.TuxPaintLauncher
 activity_version = 7
 bundle_id = org.tuxpaint
