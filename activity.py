@@ -70,7 +70,7 @@ class TuxPaintLauncher(Activity):
             if os.path.exists(documents_path) and \
                     os.environ.get('HOME') != documents_path:
                 return documents_path
-        except OSError, exception:
+        except OSError as exception:
             if exception.errno != errno.ENOENT:
                 logging.exception('Could not run xdg-user-dir')
         return None
